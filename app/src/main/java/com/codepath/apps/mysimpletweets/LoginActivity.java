@@ -1,12 +1,13 @@
-package com.codepath.apps.restclienttemplate;
+package com.codepath.apps.mysimpletweets;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 
 import com.codepath.oauth.OAuthLoginActionBarActivity;
-import com.codepath.oauth.OAuthLoginActivity;
 
+
+// Where the user will sign in to twitterhttps://github.com/codepath/android-rest-client-template.git
 public class LoginActivity extends OAuthLoginActionBarActivity<RestClient> {
 
 	@Override
