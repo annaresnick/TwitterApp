@@ -1,7 +1,6 @@
 package com.codepath.apps.mysimpletweets;
 
 import android.content.Context;
-import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +10,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Locale;
 
 // Taking the Tweet objects and turning them into Views displayed in the list
 public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
@@ -37,7 +34,10 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         ImageView ivProfileImage = (ImageView) convertView.findViewById(R.id.ivProfileImage);
         TextView tvUserName = (TextView) convertView.findViewById(R.id.tvUserName);
         TextView tvBody = (TextView) convertView.findViewById(R.id.tvBody);
+        TextView tvDate = (TextView) convertView.findViewById(R.id.tvDate);
+
         // 4. Populate data into the subviews
+        tvDate.setText(tweet.getRelativeDate());
         tvUserName.setText(tweet.getUser().getScreenName());
         tvBody.setText(tweet.getBody());
         ivProfileImage.setImageResource(android.R.color.transparent); // clear out the old image for a recycled view

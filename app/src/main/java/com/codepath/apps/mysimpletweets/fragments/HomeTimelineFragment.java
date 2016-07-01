@@ -23,6 +23,12 @@ public class HomeTimelineFragment extends TweetsListFragment{
         client = TwitterApplication.getRestClient(); // singleton client
         populateTimeline();
     }
+
+    public void appendTweet(Tweet tweet) {
+        tweets.add(0, tweet);
+        aTweets.notifyDataSetChanged();
+        lvTweets.setSelection(0);
+    }
     // Send an API request to get the timeline json
     // Fill the listview by creating the tweet objects from the json
     private void populateTimeline() {
@@ -47,4 +53,6 @@ public class HomeTimelineFragment extends TweetsListFragment{
             }
         });
     }
+
+
 }
