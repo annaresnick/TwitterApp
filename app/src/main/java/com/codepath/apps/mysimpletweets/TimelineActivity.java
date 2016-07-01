@@ -27,7 +27,6 @@ public class TimelineActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
-
         adapterViewPager = new TweetsPagerAdapter(getSupportFragmentManager());
         // Get the viewpager
         ViewPager vpPager = (ViewPager) findViewById(R.id.viewpager);

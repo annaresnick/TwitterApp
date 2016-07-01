@@ -4,17 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools">
     <item
         android:id="@+id/miCompose"
-        android:icon="@drawable/ic_compose"
+        android:icon="@mipmap/ic_compose"
         app:showAsAction="ifRoom"
         android:title="Compose"
-        android:onClick="onComposeView">
+        android:onClick="onComposeView"
+        android:orderInCategory="3">
 
     </item>
     <item
         android:id="@+id/miProfile"
-        android:icon="@drawable/ic_profile"
+        android:icon="@mipmap/ic_profile"
         android:onClick="onProfileView"
         android:title="Profile"
-        app:showAsAction="ifRoom">
+        app:showAsAction="ifRoom"
+        android:orderInCategory="2">
+    </item>
+    <item
+        android:icon="@mipmap/ic_bird"
+        app:showAsAction="ifRoom"
+        android:id="@+id/miBird"
+        android:title="Bird"
+        android:orderInCategory="1">
     </item>
 </menu>

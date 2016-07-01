@@ -13,10 +13,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etTweet"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:inputType="text"
-        android:layout_marginTop="189dp" />
+        android:hint="@string/what_s_happening"
+        android:layout_marginTop="117dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -24,6 +26,19 @@
         android:text="Tweet"
         android:id="@+id/btnTweet"
         android:onClick="onSubmit"
-        android:layout_below="@+id/etTweet"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#29c2e9"
+        android:textColor="@color/abc_primary_text_material_dark" />
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/ivExit"
+        android:onClick="onClick"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@mipmap/ic_exit"/>
 </RelativeLayout>

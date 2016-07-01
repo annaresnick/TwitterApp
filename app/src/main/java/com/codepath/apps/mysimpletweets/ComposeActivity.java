@@ -21,6 +21,11 @@ public class ComposeActivity extends AppCompatActivity {
 
 
     }
+    public void onClick(View view) {
+        Intent i = new Intent(this, TimelineActivity.class);
+        startActivity(i);
+    }
+
     public void onSubmit(View v) {
         TwitterClient client = TwitterApplication.getRestClient();
         EditText etTweets = (EditText)findViewById(R.id.etTweet);
@@ -38,4 +43,6 @@ public class ComposeActivity extends AppCompatActivity {
         });
 
     }
+
+
 }

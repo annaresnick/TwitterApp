@@ -15,13 +15,15 @@ import cz.msebera.android.httpclient.Header;
 
 public class UserTimelineFragment extends TweetsListFragment{
     private TwitterClient client;
+    private String screenName;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         // Get the client
         client = TwitterApplication.getRestClient(); // singleton client
-        populateTimeline();
+        screenName = getArguments().getString("screen_name");
+        populateTimeline(screenName);
     }
 
     // Createsa new fragment given an int and title
@@ -34,10 +36,12 @@ public class UserTimelineFragment extends TweetsListFragment{
         return userFragment;
     }
 
+
+
     // Send an API request to get the timeline json
     // Fill the listview by creating the tweet objects from the json
-    private void populateTimeline() {
-        String screenName = getArguments().getString("screen_name");
+    private void populateTimeline(String screenName) {
+       // screenName = getArguments().getString("screen_name");
 
         client.getUserTimeline(screenName, new JsonHttpResponseHandler(){
             // SUCCESS
