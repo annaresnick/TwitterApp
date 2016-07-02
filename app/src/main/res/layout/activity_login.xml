@@ -17,14 +17,18 @@
         android:textColor="@color/twitter_blue"
         android:layout_marginBottom="30dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        />
+        android:id="@+id/button"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome to Twitter"
-        android:id="@+id/textView2"
+        android:textSize="20dp"
+        android:id="@+id/tvWelcome"
         android:textColor="@color/abc_secondary_text_material_dark"
         android:layout_marginTop="25dp"
         android:layout_below="@+id/imageView"
@@ -40,12 +44,15 @@
         android:layout_marginTop="42dp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:text="Get real-time updates about what matters to you."
         android:id="@+id/textView3"
-        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:layout_below="@+id/tvWelcome"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/abc_primary_text_material_dark" />
+        android:layout_marginTop="22dp" />
 
 </RelativeLayout>

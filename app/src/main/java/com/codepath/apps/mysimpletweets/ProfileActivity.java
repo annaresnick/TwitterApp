@@ -66,9 +66,11 @@ public class ProfileActivity extends ActionBarActivity {
         TextView tvTagline = (TextView) findViewById(R.id.tvTagline);
         TextView tvFollowers = (TextView) findViewById(R.id.tvFollowers);
         TextView tvFollowing = (TextView) findViewById(R.id.tvFollowing);
+        TextView tvTitle = (TextView) findViewById(R.id.tvTitle);
         ImageView ivProfileImage = (ImageView) findViewById(R.id.ivProfileImage);
         tvName.setText(user.getName());
         tvTagline.setText(user.getTagline());
+        tvTitle.setText("  @" + user.getScreenName());
         tvFollowers.setText(user.getFollowersCount() + " Followers");
         tvFollowing.setText(user.getFriendsCount() + " Following");
         Picasso.with(this).load(user.getProfileImageUrl()).into(ivProfileImage);

@@ -36,6 +36,7 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         TextView tvUserName = (TextView) convertView.findViewById(R.id.tvUserName);
         TextView tvBody = (TextView) convertView.findViewById(R.id.tvBody);
         TextView tvDate = (TextView) convertView.findViewById(R.id.tvDate);
+        TextView tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
 
         ivProfileImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,18 +44,29 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
                 Intent i = new Intent(getContext(), ProfileActivity.class);
                 i.putExtra("user", tweet.getUser());
                 i.putExtra("screen_name", tweet.getUser().getScreenName());
+                i.putExtra("media_url", tweet.getUser().getMediaUrl());
                 getContext().startActivity(i);
             }
         });
 
+
         // 4. Populate data into the subviews
         tvDate.setText(tweet.getRelativeDate());
-        tvUserName.setText(tweet.getUser().getScreenName());
+        tvTitle.setText(" @" + tweet.getUser().getScreenName());
+        tvUserName.setText(tweet.getUser().getName());
         tvBody.setText(tweet.getBody());
         ivProfileImage.setImageResource(android.R.color.transparent); // clear out the old image for a recycled view
         Picasso.with(getContext()).load(tweet.getUser().getProfileImageUrl()).into(ivProfileImage);
         // 5. Return the view to be inserted into the list
         return convertView;
     }
+    /*
+    // Clean all elements of the recycler
+    public void clear() {
+        items.clear();
+        notifyDataSetChanged();
+    }
+    */
+
 
 }
